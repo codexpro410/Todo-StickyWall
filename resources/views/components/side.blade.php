@@ -6,7 +6,8 @@
         <p class="text-2xl">&equiv;</p>
     </div>
     <section>
-    <a href="/tasks">Tasks</a>
+    {{-- <a href="/tasks">Tasks</a> --}}
+    <a href="/">Tasks</a>
     <div class="flex justify-between items-center">
         <h4 class="ml-4">Upcomming</h4>
         <p class=" p-1 bg-gray-300 rounded-lg">12</p>

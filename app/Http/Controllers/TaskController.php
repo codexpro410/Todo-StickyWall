@@ -11,13 +11,13 @@ class TaskController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
-    {
-        //
-        $tasks = Task::all();
-        return view('tasks.index', compact('tasks'));
+    // public function index()
+    // {
+    //     //
+    //     $tasks = Task::all();
+    //     return view('tasks.index', compact('tasks'));
 
-    }
+    // }
 
     /**
      * Show the form for creating a new resource.
@@ -33,15 +33,16 @@ class TaskController extends Controller
      */
     public function store(StoreTaskRequest $request)
     {
-        $validate = $request->validate([
-            'title' => 'required',
-            'description' => 'required',
-            'tag'=>'required',
-            // 'completed' => 'required',
-            'priority' => 'required',
-        ]);
+        // $validate = $request->validate([
+        //     'title' =>'required|min:3|max:255',
+        //     'description' => 'required|min:3|max:255',
+        //     'tag'=>'required|min:3|max:255',
+        //     // 'completed' => 'required',
+        //     'priority' => 'required|min:3|max:255'
+        // ]);
 
-        Task::create($validate);
+        // Task::create($validate);
+        Task::create($request->validated());
         return redirect('/')->with('success', 'Task created successfully!');
     }
 
@@ -68,7 +69,16 @@ class TaskController extends Controller
     public function update(UpdateTaskRequest $request, Task $task)
     {
         //
-        $task->update($request->all());
+        // $task->update($request->all());
+
+        // $task->update($request->validate([
+        //     'title' => ['required', 'min:3' ,'max:255', 'unique:tasks'],
+        //     'description' => 'required',
+        //     'tag'=>'required',
+        //     // 'completed' => 'required',   
+        //     'priority' => 'required',
+        // ]));
+        $task->update($request->validated());
         return redirect('/')->with('success', 'Task updated successfully!');
     }
 

@@ -1,4 +1,4 @@
-@extends('layout.layout')
+{{-- @extends('layout.layout')
 <main class="flex">
     @include('components.side')
     <article class="flex flex-col gap-6 m-10 p-2 w-full h-full bg-gray-200 rounded-l-lg">
@@ -13,4 +13,4 @@
             <a href="{{ route('tasks.create') }}" class="bg-gray-100 hover:bg-gray-50 hover:text-gray-500 cursor-pointer transition-all duration-150 text-5xl flex justify-center items-center rounded-lg min-h-[300]">+</a>
         </div>
     </article>
-</main>
+</main> --}}
